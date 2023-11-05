@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>KnowlegeBase</title>
+  <meta name="This is the Admin Panel Landing Page for the Logistics department requirement" content="">
+  <meta name="Yassar Zaman" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!--<link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>-->
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/skeleton.css">
+  <link rel="stylesheet" href="./css/custom.css">
+  
+   <!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src=".//js/jquery.min.js"></script>
+  <!-- <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script> -->
+  <link rel="stylesheet" href="css/github-prettify-theme.css">
+  <script src="js/site.js"></script>
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="./img/favicon.png">
+
+</head>
+<body>
+  <!-- The Top Row Having Logo and Nav -->
+    <div class ="thePad">
+	  <div class="row" style= "border : solid 1px black">		
+		<div class="twelve columns " >		
+			<span class = "eight columns"><img style= "margin-left : 65px; margin-top : 4px" src="images/default-logo.png"></span>		
+			<nav class="navbar">			
+				<ul class="navbar-list four columns" style= "margin-left : 55px">
+					<li class="navbar-item">
+						<a class="navbar-link" target="popup" href="./idgenerator/idgenerator.html"
+						window.open('./idgenerator/idgenerator.html','popup','left=250,top=120,width=800,height=600');>IDGenerator</a>
+					</li>
+					<li class="navbar-item">
+						<a class="navbar-link" href="#selectPlaylist">VideoTutorials</a>
+					</li>
+					<li class="navbar-item">
+					    <a class="navbar-link" href="#tabMenu">HowToDocs</a>
+					</li>
+				</ul>
+			</nav>	
+		</div>
+	  </div>
+	</div>  	  
+	  <div class="row" style =  "margin-top : 20px">
+	  
+		<div class="twelve columns" >
+		<!-- The video player goes here -->
+			<div class="seven columns" style = "margin-left : 130px; height : 450px;"> 
+				<iframe id="VideoPlayer" class = "responsive-iframe"
+				src="upload/videos/selenium/01_GettingStarted-byLaunchBrowser.mp4"
+				frameborder="0" allowfullscreen=""></iframe>  
+			</div>
+			
+		<!-- The playlist goes here -->	
+			<div class="three columns" >
+				<div class="scroll_container custom-scrollbar" style =  "height : 350px">
+					<div class = "row listItem playlist-active" id="item1" onclick="changeVideo('item1','upload/videos/selenium/01_GettingStarted-byLaunchBrowser.mp4')" style="margin-top : 5px;">
+						<b class = "listTitle">01_GettingStarted-byLaunchBrowser</b>
+						<fieldset>Learn to setup selenium, import the drivers and launch the browser.</fieldset>
+					</div>
+					
+					<div class = "row listItem playlist-item" id="item2" onclick="changeVideo('item2','upload/videos/selenium/02_Locators-By&WebElementClass.mp4')">
+						<b class="listTitle">02_Locators-By&WebElementClass</b>
+						<fieldset>Locate the elements on the webpage, interact with them using WebElementClass object.</fieldset>
+					</div>
+					
+					<div class = "row listItem playlist-item" id="item3" onclick="changeVideo('item3','upload/videos/selenium/03_Locators-RelativeXpath.mp4')">
+						<b class="listTitle">03_Locators-RelativeXpath</b>
+						<fieldset>Having covered the major locators in the previous session, know how to locate elements stuck under complex DOM heirarchy.</fieldset>
+					</div>
+					
+					<div class = "row listItem playlist-item" id="item4" onclick="changeVideo('item4','upload/videos/selenium/03_recap&doubtsClarification.mp4')">
+						<b class="listTitle">03_Recap & Doubts Clarification</b>
+						<fieldset>Take a breather and break down what has been covered so far. Look what is ahead of you to learn.</fieldset>
+					</div>
+					
+					<div class = "row listItem playlist-item" id="item5" onclick="changeVideo('item5','upload/videos/selenium/04_Waits_Exceptions_Frames.mp4')">
+						<b class="listTitle">04_Waits_Exceptions_Frames</b>
+						<fieldset>Know about browser options , Exceptions and the reason why NoSuchElement exceptions occurs and how to handle it via Delays and Switch to Frame.</fieldset>
+					</div>
+					
+				</div>
+				<!-- Shuffle Playlist Content -->
+				<div id="selectPlaylist" style = "margin-top: 20px; height : 100 px">
+				<span style = "margin-left: 23px">
+					<select>
+						<option>Selenium</option>
+						<option>ASTP</option>
+						<option>IMAL</option>
+					</select>
+				</span>
+				<span style = "margin-left: 23px">
+					<button class="button-primary">Switch Playlist</button>
+				</span>
+				<div>
+				<center><p>Listing Selenium Playlist</p></center>
+				</div>
+				</div>
+			</div>
+		
+		</div>
+		
+	  </div>	  	  
+	  
+   <!-- The section for HowTo Docs -->
+		
+	    <div class="row" style =  "margin-top : 10px; ">
+			
+			<div class="ten columns" style =  "margin-left : 70px; ">			    						
+					<span id = "tabMenu" class="nav-menu">
+							<span class = "ttab nav-menu-active" onclick="switchContent('symex')"><input type="radio">SYMEX</input></span>
+							<span class = "ttab" onclick="switchContent('cortex')"><input type="radio" >CORTEX</input></span>
+							<span class = "ttab" onclick="switchContent('cashier')"><input type="radio" >CASHIER</input></span>
+					</span>
+						
+					<div id="symex" class="appBlock">
+						<legend class = "docs-header">Symex</legend>
+						<h6>Symex is core application for FAWRI remmitance. This sections
+						has essential documents related to the same.</h6>
+						
+						<table class = "docList" >
+						  <colgroup>
+							<col width="32.6%">
+							<col width="67.4%">
+						  </colgroup>
+						  <thead>
+							<tr>
+								<th>Document Name</th>
+								<th>Purpose</th>						
+							</tr>
+						   </thead>	
+							<tbody>	
+							<tr>
+							  <td>							
+								<label target="popup" 
+								onclick="window.open('file:///C:/Users/baj80000835/Desktop/desktop/PROJECT/Atomated/KnowledgeBase/upload/pdf/symex/SymexUserManual.html','popup','left=250,top=120,width=800,height=600'); return false; ">
+								User Manual
+								</label>
+							  </td>
+							  <td class="u-table-cell">Know the overall architecture of symex and the navigations required to transact.</td>
+							</tr>
+							<tr>
+							  <td>
+							  <label target="popup" 
+								onclick="window.open('file:///C:/Users/baj80000835/Desktop/desktop/PROJECT/Atomated/KnowledgeBase/upload/pdf/symex/Issuance_Fawri_Card_manual.html','popup','left=250,top=120,width=800,height=600'); return false; ">
+								Fawri Card Issuance
+							  </label>
+							  </td>
+							  <td class="u-table-cell">Get to know the how to of issuing fawri card.</td>
+							</tr>                    
+						  </tbody>
+						</table> 
+				
+					</div>
+
+					<div id="cortex" class="appBlock" style="display:none">
+					  <legend class = "docs-header">CORTEX</legend>
+					  <h6>Cortex is the card management system of Bank Al-Jazira. This is primarily integrated with BAJ Middleware services by bridging BPM for debit and LMS for credit cards. There are two different interfaces one for credit cards and another for debit cards.</h6>
+					  
+					  <table class = "docList" >
+						  <colgroup>
+							<col width="32.6%">
+							<col width="67.4%">
+						  </colgroup>
+						  <thead>
+							<tr>
+								<th>Document Name</th>
+								<th>Purpose</th>						
+							</tr>
+						   </thead>	
+							<tbody>	
+							<tr>
+							  <td>							
+									<label target="popup" 
+									onclick="window.open('file:///C:/Users/baj80000835/Desktop/desktop/PROJECT/Atomated/KnowledgeBase/upload/pdf/cortex/ReportGeneration_Cortex.html','popup','left=250,top=120,width=800,height=600'); return false; ">
+									Report Genearation
+									</label>
+							  </td>
+							  <td class="u-table-cell">All the cortex credit reports are generated by executing a series of steps. This document gives a brief information explained by an example.</td>
+							</tr>
+							<tr>
+							  <td>
+							  <label target="popup" 
+								onclick="window.open('file:///C:/Users/baj80000835/Desktop/desktop/PROJECT/Atomated/KnowledgeBase/upload/pdf/cortex/Restart_CORTEX_CC_services.html','popup','left=250,top=120,width=800,height=600'); return false; ">
+								Restarting Cortex
+							  </label>
+							  </td>
+							  <td class="u-table-cell">Get to know the how to restart cortex server.</td>
+							</tr>                    
+						  </tbody>
+						</table>
+						
+					</div>
+
+					<div id="cashier" class="appBlock" style="display:none">
+					   <legend class = "docs-header">CASHIER</legend>
+					  <h6>Cashier is the application used by teller at the branch. From cash deposit to account transfer and loan repayments which are done over the counter are managed through this application.</h6>
+					  
+					  <table class = "docList" >
+						  <colgroup>
+							<col width="32.6%">
+							<col width="67.4%">
+						  </colgroup>
+						  <thead>
+							<tr>
+								<th>Document Name</th>
+								<th>Purpose</th>						
+							</tr>
+						   </thead>	
+							<tbody>	
+							<tr>
+							  <td>							
+									<label target="popup" 
+									onclick="window.open('file:///C:/Users/baj80000835/Desktop/desktop/PROJECT/Atomated/KnowledgeBase/upload/pdf/cashier/Cashier_System_Guide.html','popup','left=250,top=120,width=800,height=600'); return false; ">
+									Report Genearation
+									</label>
+							  </td>
+							  <td class="u-table-cell">This documnet covers how to's of almost all the major activities performed through this sytem. Starts with a general view architecture and extends the way of resetting date , opening and closing branch and explains how to perform transactions. </td>
+							</tr>
+							                  
+						  </tbody>
+						</table>
+					</div>		
+					
+			</div>	
+		</div>
+		
+  <!-- The Footer Row Having copyright -->
+    <div class ="thePad">
+		<div class="row" >		
+		<div class="twelve columns" height = 20px; style = "bottom: 0; border : solid 1px black">
+		
+			<center><em>Source code &copy by BankAlJazira. All rights reserved.</em></center>
+			
+		</div>
+	  </div>
+	</div>
+	
+
+  <script>
+ 
+ <!-- Script for tab switching -->
+  $(document).ready(function(){
+    $("#tabMenu").on("click", "span", function(){
+       $(".ttab").removeClass("nav-menu-active");
+        $(this).addClass("nav-menu-active");
+    })
+}) 
+
+<!-- Script for video Player -->
+  function changeVideo(id,url) {
+  $(".playlist-active").removeClass("playlist-active");
+      $(".playlist-item").removeClass("playlist-active");
+      $("#"+id).addClass("playlist-active");
+      var $iframe = $("#VideoPlayer");
+      $iframe.attr("src", url);
+      $iframe.show();      
+    }
+<!-- Script for switching Tabs -->	
+	function switchContent(appName) {
+	$(".appBlock").hide();
+	$("#"+appName).show();
+/*var i;
+	  var x = document.getElementsByClassName("appBlock");
+		  for (i = 0; i < x.length; i++) {
+			x[i].style.display = "none";
+		  }
+	  document.getElementById(appName).style.display = "block";	*/  
+	}
+	
+
+  </script>
+  
+</body>
+</html>
