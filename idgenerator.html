@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>IDGenerator</title>
+  <meta name="This quick script helps generate random ID's" content="">
+  <meta name="Yassar Zaman" content="">  
+
+   <link rel="stylesheet" href="../css/normalize.css">
+   <link rel="stylesheet" href="../css/skeleton.css">
+   <link rel="stylesheet" href="../css/custom.css">
+   <link rel="icon" type="image/png" href="../img/favicon.png">
+
+</head>
+<body>
+
+<div class = "row">
+	<div class = "seven columns" style="margin-left : 380px; margin-top : 20px;">
+<form action="#">
+		<select id="idtype">
+				<option value = '1'>1 - National ID</option>
+				<option value = '2'>2 - Iqama/PR-Iqama</option>
+				<option value = '3'>3 - VisitVisa</option>
+		</select>
+			
+			<input id="iteration" type="number" min="1" max="100" placeholder = "count" title="Max : 100 ID's at once" required>
+			<input type="submit" class = "button-primary" onClick="getIDs()"; value = "Generate" />
+			<ol id="theVal" onclick="CopyToClipboard('theVal');return false;"; title = "Click to Copy" ></ol>	
+			 
+</form>
+	
+</div>
+	
+
+<script>  
+
+function CopyToClipboard(id)
+{
+var r = document.createRange();
+r.selectNode(document.getElementById(id));
+window.getSelection().removeAllRanges();
+window.getSelection().addRange(r);
+document.execCommand('copy');
+window.getSelection().removeAllRanges();
+}
+
+function getIDs() {
+	var idTyp = document.getElementById("idtype").value;
+    
+    var count = document.getElementById("iteration").value;
+    
+	if(count <= 100){
+    for(var i=0; i< count; i++){
+		var rand1 = Math.floor(Math.random() * 9);
+		var rand2 = Math.floor(Math.random() * 9);
+		var rand3 = Math.floor(Math.random() * 9);
+		var rand4 = Math.floor(Math.random() * 9);
+		var rand5 = Math.floor(Math.random() * 9);
+		var rand6 = Math.floor(Math.random() * 9);
+		var rand7 = Math.floor(Math.random() * 9);
+		var rand8 = Math.floor(Math.random() * 9);
+		var message = idTyp + rand1 + rand2 + rand3 + rand4 + rand5 + rand6 + rand7 + rand8;
+		// dont really care why so many variables were created. So long as code is readable.But you may improve this block.
+		// js was giving hard time with (Math.random() * 99999999), it was giving back 7 or 8 digits @ different instances.
+    	let list = document.createElement('li');
+    	list.innerText = getIDNumber(message);  
+   	    document.querySelector('#theVal').appendChild(list);
+    }}
+
+  }
+  
+function getIDNumber(message) {
+            theMessage = message.substring(0, 9);
+            var total_odd = 0;
+            var total_even = 0;
+            var dummy_odd = 0;
+            var dummy_even = 0;
+            var ch = 0;		
+            
+           // handle the odd positions
+            for (var i = 0; i < theMessage.length; i=i+2)
+            {
+              ch = theMessage[i] ;
+                 if((ch*2) > 9){
+                      dummy_odd = (2 * ch) - 9; 
+                     }else{
+                	  dummy_odd = 2 * ch;		
+              		}	
+              		total_odd = total_odd + dummy_odd;
+            }
+            
+            // handle the even positions
+            for (var i = 1; i < theMessage.length; i=i+2)
+            {
+              ch = theMessage[i] ;
+              dummy_even = ch % 9;
+              total_even = total_even + dummy_even
+            }
+            
+            // sum them up
+            total = total_odd + total_even;
+            
+            // lastly make sure its deduced to a digit
+            if(total%10 === 0)
+              total = 0;
+            else
+              total = 10 - (total%10);
+              
+  return message+total;
+}   
+		
+</script>
+
+
+</body>
+</html>
